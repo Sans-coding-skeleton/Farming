@@ -14,7 +14,11 @@ public abstract class Flower {
         setChanceOfGrowth(chanceOfGrowth);
     }
 
-    public Flower addFlower(String flower) throws Exception {
+    public void waterFlower(){
+        setChanceOfGrowth(chanceOfGrowth + 5);
+    }
+
+    public static Flower addFlower(String flower) throws Exception {
         switch (flower) {
             case "Sunflower":
                 return new Sunflower("Sunflower", 90, 6, 85);
