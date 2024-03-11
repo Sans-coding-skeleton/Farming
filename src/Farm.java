@@ -21,4 +21,9 @@ public class Farm {
            garden.add(f);
         }
     }
+
+    public void harvestFlower(String name) throws Exception {
+        Flower f = Flower.addFlower(name);
+        garden.remove(f);
+    }
 }
