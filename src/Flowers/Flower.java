@@ -9,17 +9,17 @@ public abstract class Flower {
 
     public Flower(String name, double price, double neededArea, double chanceOfGrowth) {
         this.name = name;
-        this.price = price;
-        this.neededArea = neededArea;
-        this.chanceOfGrowth = chanceOfGrowth;
+        setPrice(price);
+        setNeededArea(neededArea);
+        setChanceOfGrowth(chanceOfGrowth);
     }
 
     public Flower addFlower(String flower) throws Exception {
-        switch (flower){
+        switch (flower) {
             case "Sunflower":
                 return new Sunflower("Sunflower", 90, 6, 85);
             case "Rose":
-                return new Rose("Rose", 100, 4,50);
+                return new Rose("Rose", 100, 4, 50);
             case "Daisy":
                 return new Daisy("Daisy", 65, 4, 60);
             case "Tulip":
@@ -28,6 +28,48 @@ public abstract class Flower {
                 return new Poppy("Poppy", 55, 4, 70);
             default:
                 throw new Exception("Flower specification needed.");
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        if (price >= 0) {
+            this.price = price;
+        }
+    }
+
+    public double getNeededArea() {
+        return neededArea;
+    }
+
+    public void setNeededArea(double neededArea) {
+        if (neededArea > 0) {
+            this.neededArea = neededArea;
+        }
+    }
+
+    public double getChanceOfGrowth() {
+        return chanceOfGrowth;
+    }
+
+    public void setChanceOfGrowth(double chanceOfGrowth) {
+        if (chanceOfGrowth > 100) {
+            chanceOfGrowth = 100;
+        } else if (chanceOfGrowth < 0) {
+            chanceOfGrowth = 0;
+        } else {
+            this.chanceOfGrowth = chanceOfGrowth;
         }
     }
 
