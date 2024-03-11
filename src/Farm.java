@@ -1,3 +1,4 @@
+import Animals.Animal;
 import Flowers.Flower;
 
 import java.util.ArrayList;
@@ -5,6 +6,7 @@ import java.util.ArrayList;
 public class Farm {
     private String name;
     private ArrayList<Flower> garden;
+    private ArrayList<Animal> barn;
     private int size = 100;
 
     public int getFlowersSize() {
@@ -26,4 +28,5 @@ public class Farm {
         Flower f = Flower.addFlower(name);
         garden.remove(f);
     }
+
 }
